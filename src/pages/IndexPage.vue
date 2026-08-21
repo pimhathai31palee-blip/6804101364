@@ -28,10 +28,14 @@ const onSubmit = () => {
       textColor: 'white',
       icon: 'warning',
 <<<<<<< HEAD
+<<<<<<< HEAD
       message: 'คุณต้องยอมรับเงื่อนไขและข้อตกลงก่อน'
 =======
       message: '您需要先接受许可和条款'
 >>>>>>> Chinese-language
+=======
+      message: '最初に規約に同意する必要があります'
+>>>>>>> Japanese-language
     })
   } else {
     $q.notify({
@@ -39,10 +43,14 @@ const onSubmit = () => {
       textColor: 'white',
       icon: 'cloud_done',
 <<<<<<< HEAD
+<<<<<<< HEAD
       message: 'ยื่นแบบฟอร์มสำเร็จ'
 =======
       message: '提交成功'
 >>>>>>> Chinese-language
+=======
+      message: '送信されました'
+>>>>>>> Japanese-language
     })
   }
 }
