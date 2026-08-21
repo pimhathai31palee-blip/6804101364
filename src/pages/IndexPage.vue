@@ -1,12 +1,12 @@
 <template>
   <q-page class="q-pa-md">
     <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md" style="max-width: 600px">
-      <q-input filled v-model="name" label="Your name *" hint="Name and surname" />
-      <q-input filled type="number" v-model="age" label="Your age *" />
-      <q-toggle v-model="accept" label="I accept the license and terms" />
+      <q-input filled v-model="name" label="您的姓名 *" hint="姓氏和名字" />
+      <q-input filled type="number" v-model="age" label="您的年龄 *" />
+      <q-toggle v-model="accept" label="我接受许可和条款" />
       <div>
-        <q-btn label="SUBMIT" type="submit" color="primary" />
-        <q-btn label="RESET" type="reset" color="primary" flat class="q-ml-sm" />
+        <q-btn label="提交" type="submit" color="primary" />
+        <q-btn label="重置" type="reset" color="primary" flat class="q-ml-sm" />
       </div>
     </q-form>
   </q-page>
@@ -27,14 +27,14 @@ const onSubmit = () => {
       color: 'red-5',
       textColor: 'white',
       icon: 'warning',
-      message: 'You need to accept the license and terms first'
+      message: '您需要先接受许可和条款'
     })
   } else {
     $q.notify({
       color: 'green-4',
       textColor: 'white',
       icon: 'cloud_done',
-      message: 'Submitted'
+      message: '提交成功'
     })
   }
 }
