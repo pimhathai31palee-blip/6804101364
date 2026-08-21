@@ -1,9 +1,9 @@
 <template>
   <q-page class="q-pa-md">
-    <q-form class="q-gutter-md" style="max-width: 600px">
-      <q-input filled label="Your name *" hint="Name and surname" />
-      <q-input filled type="number" label="Your age *" />
-      <q-toggle label="I accept the license and terms" />
+    <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md" style="max-width: 600px">
+      <q-input filled v-model="name" label="Your name *" hint="Name and surname" />
+      <q-input filled type="number" v-model="age" label="Your age *" />
+      <q-toggle v-model="accept" label="I accept the license and terms" />
       <div>
         <q-btn label="SUBMIT" type="submit" color="primary" />
         <q-btn label="RESET" type="reset" color="primary" flat class="q-ml-sm" />
@@ -11,3 +11,37 @@
     </q-form>
   </q-page>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import { useQuasar } from 'quasar'
+
+const $q = useQuasar()
+const name = ref(null)
+const age = ref(null)
+const accept = ref(false)
+
+const onSubmit = () => {
+  if (accept.value !== true) {
+    $q.notify({
+      color: 'red-5',
+      textColor: 'white',
+      icon: 'warning',
+      message: 'You need to accept the license and terms first'
+    })
+  } else {
+    $q.notify({
+      color: 'green-4',
+      textColor: 'white',
+      icon: 'cloud_done',
+      message: 'Submitted'
+    })
+  }
+}
+
+const onReset = () => {
+  name.value = null
+  age.value = null
+  accept.value = false
+}
+</script>
