@@ -1,12 +1,12 @@
 <template>
   <q-page class="q-pa-md">
     <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md" style="max-width: 600px">
-      <q-input filled v-model="name" label="Your name *" hint="Name and surname" />
-      <q-input filled type="number" v-model="age" label="Your age *" />
-      <q-toggle v-model="accept" label="I accept the license and terms" />
+      <q-input filled v-model="name" label="お名前 *" hint="氏名" />
+      <q-input filled type="number" v-model="age" label="年齢 *" />
+      <q-toggle v-model="accept" label="規約に同意します" />
       <div>
-        <q-btn label="SUBMIT" type="submit" color="primary" />
-        <q-btn label="RESET" type="reset" color="primary" flat class="q-ml-sm" />
+        <q-btn label="送信" type="submit" color="primary" />
+        <q-btn label="リセット" type="reset" color="primary" flat class="q-ml-sm" />
       </div>
     </q-form>
   </q-page>
@@ -27,14 +27,14 @@ const onSubmit = () => {
       color: 'red-5',
       textColor: 'white',
       icon: 'warning',
-      message: 'You need to accept the license and terms first'
+      message: '最初に規約に同意する必要があります'
     })
   } else {
     $q.notify({
       color: 'green-4',
       textColor: 'white',
       icon: 'cloud_done',
-      message: 'Submitted'
+      message: '送信されました'
     })
   }
 }
