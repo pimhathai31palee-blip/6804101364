@@ -1,12 +1,12 @@
 <template>
   <q-page class="q-pa-md">
     <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md" style="max-width: 600px">
-      <q-input filled v-model="name" label="ชื่อของคุณ *" hint="ชื่อและนามสกุล" />
-      <q-input filled type="number" v-model="age" label="อายุของคุณ *" />
-      <q-toggle v-model="accept" label="ฉันยอมรับเงื่อนไขและข้อตกลง" />
+      <q-input filled v-model="name" label="Your name (ชื่อ-สกุล) *" hint="Name and Surname" />
+      <q-input filled type="number" v-model="age" label="Your age (อายุ) *" />
+      <q-toggle v-model="accept" label="I accept the license and terms (我接受许可和条款语言)" />
       <div>
-        <q-btn label="ยื่นแบบฟอร์ม" type="submit" color="primary" />
-        <q-btn label="ล้างค่า" type="reset" color="primary" flat class="q-ml-sm" />
+        <q-btn label="SUBMIT (提出する)" type="submit" color="primary" />
+        <q-btn label="RESET (リセット)" type="reset" color="primary" flat class="q-ml-sm" />
       </div>
     </q-form>
   </q-page>
@@ -27,30 +27,14 @@ const onSubmit = () => {
       color: 'red-5',
       textColor: 'white',
       icon: 'warning',
-<<<<<<< HEAD
-<<<<<<< HEAD
-      message: 'คุณต้องยอมรับเงื่อนไขและข้อตกลงก่อน'
-=======
-      message: '您需要先接受许可和条款'
->>>>>>> Chinese-language
-=======
-      message: '最初に規約に同意する必要があります'
->>>>>>> Japanese-language
+      message: 'You need to accept the license and terms first'
     })
   } else {
     $q.notify({
       color: 'green-4',
       textColor: 'white',
       icon: 'cloud_done',
-<<<<<<< HEAD
-<<<<<<< HEAD
-      message: 'ยื่นแบบฟอร์มสำเร็จ'
-=======
-      message: '提交成功'
->>>>>>> Chinese-language
-=======
-      message: '送信されました'
->>>>>>> Japanese-language
+      message: 'Submitted'
     })
   }
 }
