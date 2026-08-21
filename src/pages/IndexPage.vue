@@ -1,23 +1,13 @@
 <template>
-  <q-page class="flex flex-center">
-    <div class="column items-center">
-      <img
-        alt="Quasar logo"
-        src="~@/assets/quasar-logo-vertical.svg"
-        style="width: 200px; height: 200px"
-      />
-
-      <q-btn
-        class="q-mt-md"
-        color="primary"
-        to="/second"
-        label="Go to Second Page"
-        no-caps
-      />
-    </div>
+  <q-page class="q-pa-md">
+    <q-form class="q-gutter-md" style="max-width: 600px">
+      <q-input filled label="Your name *" hint="Name and surname" />
+      <q-input filled type="number" label="Your age *" />
+      <q-toggle label="I accept the license and terms" />
+      <div>
+        <q-btn label="SUBMIT" type="submit" color="primary" />
+        <q-btn label="RESET" type="reset" color="primary" flat class="q-ml-sm" />
+      </div>
+    </q-form>
   </q-page>
 </template>
-
-<script setup>
-//
-</script>
