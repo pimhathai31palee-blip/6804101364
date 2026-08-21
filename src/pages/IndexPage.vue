@@ -27,14 +27,22 @@ const onSubmit = () => {
       color: 'red-5',
       textColor: 'white',
       icon: 'warning',
+<<<<<<< HEAD
       message: 'คุณต้องยอมรับเงื่อนไขและข้อตกลงก่อน'
+=======
+      message: '您需要先接受许可和条款'
+>>>>>>> Chinese-language
     })
   } else {
     $q.notify({
       color: 'green-4',
       textColor: 'white',
       icon: 'cloud_done',
+<<<<<<< HEAD
       message: 'ยื่นแบบฟอร์มสำเร็จ'
+=======
+      message: '提交成功'
+>>>>>>> Chinese-language
     })
   }
 }
